@@ -1,0 +1,68 @@
+@import '../Abstracts/_variables';
+@import '../Abstracts/_mixins';
+
+.progress-circle {
+    position: relative;
+    border-radius: 50%;
+    background-color: $color-light-gray;
+    box-shadow: inset 0 3px 2px $color-very-faded-black;
+    @include displayFlex(column, center, center);
+
+    &__content {
+        height: 84%;
+        width: 84%;
+        border-radius: 50%;
+        background-color: $color-white;
+        box-shadow:  0 2px 0px $color-very-faded-black;
+        @include displayFlex(column, center, center);
+
+        &__progress-bar {
+            overflow: visible;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            fill: transparent;
+            stroke: $color-btn-blue;
+            stroke-linecap: round;
+            transform-origin: center;
+            transform: rotate(-90deg);
+            transition: all .2s ease;
+        }
+
+        &__scan-indicator {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        &__scan-indicator > circle {
+            position: absolute;
+            fill: transparent;
+            stroke: $color-green;
+            stroke-width: 3;
+            stroke-linecap: round;
+            transform-origin: center;
+            transform: rotate(-90deg);
+            animation: infinateRotation 1s infinite linear;
+            display: none;
+        }
+
+        &__scan-indicator--active > circle {
+            display: inherit;
+        }
+
+    }
+}
+
+
+@keyframes infinateRotation {
+    0% {
+      -webkit-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+    }
+  
+    100% {
+      -webkit-transform: rotate(270deg);
+      transform: rotate(270deg);
+    }
+  }

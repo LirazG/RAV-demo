@@ -1,0 +1,79 @@
+@import '../Abstracts/_variables';
+@import '../Abstracts/_mixins';
+
+.banner {
+    width:100%;
+    height: 10rem;
+    flex-shrink: 0;
+    padding-left: 3rem;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: 10% 63%;
+    background-image: linear-gradient(90deg, transparent -30%, $color-banner-blue 50%), url("./Assets/Images/banner-bg.jpg");
+    @include displayFlex(row, center, center);
+
+    &__content {
+        @include displayFlex(row, center, center);
+        padding-top: 0.6rem;
+        padding-left: 3rem;
+
+        &__figure {
+            width: 5.4rem;
+            height: 5.4rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 1px solid $color-neon-green;
+            background-color: $color-whitish-bg;
+            margin-right: 1.5rem;
+            @include displayFlex(row, center, center);
+        }
+
+        &__figure > img {
+            width: 70%;
+            height: 70%;
+        }
+
+        &__text {
+            color: $color-white;
+            font-size: 1.7rem;
+        }
+
+        &__text > p:last-of-type {
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+
+        &__text > p:last-of-type > span {
+            color: $color-neon-green;
+        }
+    }
+
+    & > button {
+        background-color: $color-orange;
+        width: 11.5rem;
+        height: 3.9rem;
+        border-radius: 1.9rem;
+        font-size: 1.4rem;
+        font-weight: 600;
+        box-shadow:0 2px 3px rgba(0,0,0,0.5);
+        color: $color-white;
+        margin-left: 4rem;
+    }
+
+    & > figure {
+        position: absolute;
+        right: -3rem;
+        top: 2rem;
+        height: 2.4rem;
+        width: 11.5rem;
+        color: $color-white;
+        letter-spacing: 1.1px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+        background-color: $color-neon-green;
+        transform: rotate(45deg);
+        @include displayFlex(row, center, center);
+    }
+}

@@ -1,0 +1,93 @@
+@import '../Abstracts/_variables';
+@import '../Abstracts/_mixins';
+
+.scan-category {
+    height: 5rem;
+    width:100%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    @include displayFlex(row, space-between, center);
+
+    &__name {
+        width: 11.2rem;
+        padding-left:2rem;
+        opacity: 0.8;
+
+        & > h6 {
+            font-size: 1.6rem;
+            font-weight: 800;
+        }
+    }
+
+    &__data {
+        height: 100%;
+        margin-left: 1rem;
+        padding: 0.8rem 0;
+        flex-grow: 1;
+
+        &--unproccessed {
+            height: 100%;
+            @include displayFlex(column, center, flex-start);
+        }
+
+        &--proccessed {
+            height: 100%;
+            @include displayFlex(column, space-between, flex-start);
+        }
+
+        & > span > p {
+            font-size: 1.3rem;
+        }
+
+        & > span > p:first-of-type {
+            opacity: 0.6;
+        }
+    }
+
+    &__result {
+        height: 5rem;
+        width:5rem;
+        @include displayFlex(column, center, center);
+
+        & > figure {
+            height: 50%;
+            width: 50%;
+            border-radius: 50%;
+            background-color: $color-white;
+            @include displayFlex(column, center, center);
+        }
+
+        & > figure > &__icon {
+            font-size: 3rem;
+        }
+
+        & > figure > &__icon--scanning {
+            animation: scaningAnimation 3s infinite linear;
+        }
+
+        &--danger {
+            background-color: $color-red;
+
+            & > figure > svg {
+                color: $color-red;
+            }
+        }
+
+        &--safe {
+            background-color: $color-green;
+            & > figure > svg {
+                color: $color-green;
+            }
+        }
+    }
+}
+
+
+@keyframes scaningAnimation {
+    0% {
+        transform: rotateY(-180deg) rotate(0deg);
+    }
+
+    100% {
+        transform: rotateY(-180deg) rotate(-180deg);
+    }
+}

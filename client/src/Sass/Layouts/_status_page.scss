@@ -1,0 +1,73 @@
+@import '../Abstracts/_variables';
+@import '../Abstracts/_mixins';
+
+.status-page {
+    width: 100%;
+    height: 100%;
+    padding: 10rem 0;
+    @include displayFlex(row, center, center);
+
+    & > section {
+        width:50%;
+        height: 100%;
+    }
+
+    & > section:first-of-type {
+        border-right: 1px solid $color-very-faded-black;
+        @include displayFlex(column, center, center);
+    }
+
+    &__first-section {
+        @include displayFlex(column, center, center);
+
+        &__content {
+            @include displayFlex(column, center, center);
+        }
+
+        &__content > p {
+            font-size: 2.7rem;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        &__quick-scan {
+            align-self: center;
+            color: $color-btn-blue;
+            font-weight: 600;
+            font-size: 1.5rem;
+            border-bottom: 1px solid $color-btn-blue;
+            padding: 3px;
+            margin-top: 2.2rem;
+            transition: all .2s;
+
+            &:hover {
+                transition: all .2s;
+                color: $color-banner-blue;
+                border-bottom: 1px solid $color-banner-blue;
+            }
+
+        }
+
+        &__scan-info {
+            width:100%;
+            border-top: 1px solid $color-very-faded-black;
+            margin-top: 2.2rem;
+            padding-top:2.2rem;
+            @include displayFlex(column, flex-start, flex-start);
+
+            & > p {
+                opacity: 0.7;
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+    }
+
+
+    &__threats {
+        padding-left: 5rem;
+        padding-right: 6rem;
+        @include displayFlex(column, space-between, flex-start);
+    }
+}

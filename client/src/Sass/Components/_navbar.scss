@@ -1,0 +1,137 @@
+@import '../Abstracts/_variables';
+@import '../Abstracts/_mixins';
+
+.navbar {
+    -webkit-app-region: drag;
+    height: 3.5rem;
+    width: 100%;
+    background-color: $color-light-gray;
+    padding: 0.5rem 1rem;
+    @include displayFlex(row, space-between, center);
+
+    &__logo {
+        height: 6.2rem;
+        transform: translateX(-3rem);
+        margin-left: 0.8rem;
+    }
+
+    &__content {
+        height: 100%;
+        @include displayFlex(row, unset, center);
+
+        &__icon {
+            font-size: 1.65rem!important;
+            font-weight: bold;
+            margin-left: 0.2rem;
+            cursor: pointer;
+            -webkit-app-region: none;
+            opacity: 0.6;
+        }
+
+        &__menu {
+            position: absolute;
+            top: calc(100% + 0.7rem);
+            right: -0.5rem;
+            background: $color-white;
+            box-shadow:0 0 3px rgba(0,0,0,0.5);
+            width: 14.5rem;
+            z-index: 100;
+
+            
+            &__item {
+                @include displayFlex(row, space-between, center);
+                padding: 2rem 1rem;
+                padding-left: 1.4rem;
+                cursor: pointer;
+                position: relative;
+            }
+
+            &__item::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top:0;
+                height: 100%;
+                width: 0.7rem;
+                background-color: $color-blue-dark;
+                opacity: 0;
+                transition: opacity .3s;
+            }
+
+            &__item:hover::after {
+                opacity: 1;
+                transition: opacity .3s;
+            }
+
+            &__item:hover > p {
+                opacity: 0.7;
+                transition: opacity .3s;
+            }
+
+            &__item:first-of-type {
+                border-bottom: 1px solid $color-very-faded-black;
+            }
+
+            &__item > svg {
+                opacity: 0.6;
+                font-size: 1.7rem;
+            }
+
+            &__item > p {
+                font-size: 1.4rem;
+                font-weight: 400;
+                letter-spacing: 0.5px;
+                opacity: 0.5;
+                transition: opacity .2s;
+            }
+        }
+
+        & > span {
+            height: 1.5rem;
+            position: relative;
+        }
+
+        & > span > i{
+            position:absolute;
+            top: calc(100% - 0.3rem);
+            left:50%;
+            margin-left: -1.2rem;
+            width:2.4rem;
+            height:1.0rem;
+            overflow:hidden;
+            z-index: 101;
+
+            &::after {
+                content:'';
+                position:absolute;
+                width:1rem;
+                height:1rem;
+                left:50%;
+                transform:translate(-50%,50%) rotate(45deg);
+                background-color: $color-white;
+                box-shadow:0 1px 8px rgba(0,0,0,0.5);
+            }
+        }
+
+
+        & > button {
+            border: 1px solid $color-gold;
+            background-color: transparent;
+            margin-right:1.65rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            font-family: inherit;
+            letter-spacing: 1.3px;
+            padding: 0 1.13rem;
+            height: 89%;
+            -webkit-app-region: none;
+        }
+
+        & > button:hover {
+            border: none;
+            background: $color-gold;
+            background: $gradient-gold;
+            color: $color-white;
+        }
+    }
+}

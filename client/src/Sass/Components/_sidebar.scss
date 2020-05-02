@@ -1,0 +1,93 @@
+@import '../Abstracts/_variables';
+@import '../Abstracts/_mixins';
+
+.sidebar {
+    width: 12rem;
+    height: 100%;
+    flex-shrink: 0;
+    @include displayFlex(column);
+
+    &__item {
+        height: calc(100% / 5);
+        background-color: $color-blue-dark;
+        border-bottom: 1px solid $color-gray-border;
+        padding-bottom: 0.7rem;
+        padding-top: 1rem;
+        @include displayFlex(column, center, center);
+
+        &:hover,
+        &--active {
+            background-color: $color-blue-darker;
+
+            & .spinner-side::after,
+            & .spinner-side::before {
+                background-color: $color-blue-darker;
+            }
+        }
+
+        &--active {
+            .sidebar__item__icon, 
+            .sidebar__item__text {
+                color: $color-white;
+            }
+        }
+
+        &__spinner-container {
+            position: relative;
+
+            &--circle {
+                position: absolute;
+                top:50%;
+                left:50%;
+                border-radius: 50%;
+                height: 3rem;
+                width: 3rem;
+                border: 3px solid $color-white;
+                transform: translate3d(-50%, -50%, 0);
+            }
+        }
+
+        &__icon {
+            font-size: 4.5rem !important;
+            color: $color-mid-gray;
+        }
+
+        &__icon__rotation {
+            transform: rotate(90deg);
+        }
+
+        &__text {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            color: $color-mid-gray;
+        }
+    }
+
+    &__item__last {
+
+        border:none;
+        
+        &__text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 0 2px $color-very-faded-black;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: $color-white;
+            padding: 0 0.5rem;
+            line-height: 1.3;
+        }
+
+        &__button {
+            background-color: $color-orange;
+            width: 86%;
+            height: 3.4rem;
+            border-radius: 0.4rem;
+            font-size: 1.2rem;
+            letter-spacing: 1.4px;
+            color: $color-white;
+        }
+        
+    }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "AV-demo",
+  "description": "AV-demo for example only",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Your name",
+    "email": "youremail@mail.com"
+  },
+  "private": true,
+  "scripts": {
+    "electron": "electron .",
+    "client": "yarn --cwd client start",
+    "watch-sass": "yarn --cwd client watch-sass",
+    "preinstall": "yarn --cwd client install",
+    "postinstall": "electron-builder install-app-deps",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "predist": "yarn --cwd client build"
+  },
+  "devDependencies": {
+    "electron": "^8.2.1",
+    "electron-builder": "^22.4.1"
+  },
+  "build": {
+    "appId": "com.author.yourapp",
+    "productName": "AV-demo",
+    "mac": {
+      "category": "public.app-category.utilities"
+    }
+  },
+  "dependencies": {
+    "faker": "^4.1.0"
+  }
+}

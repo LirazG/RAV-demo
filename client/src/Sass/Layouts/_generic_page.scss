@@ -1,0 +1,90 @@
+@import '../Abstracts/_variables';
+@import '../Abstracts/_mixins';
+
+.generic-page {
+    width: 100%;
+    height: 100%;
+    @include displayFlex(column, space-between, center);
+
+    &__content {
+        width: 100%;
+        box-sizing: border-box;
+        height: 100%;
+        padding: 5rem;
+        flex-wrap: wrap;
+        @include displayFlex(row, flex-start, flex-start);
+
+        &__feature {
+            width: 25%;
+            padding: 0 1rem;
+            @include displayFlex(column, center, center);
+        }
+
+        &__feature > figure {
+            height: 9.4rem;
+            width: 9.4rem;
+            border-radius: 50%;
+            position: relative;
+            background-color: $color-very-faded-blue;
+            cursor: pointer;
+            margin-bottom: 0.7rem;
+            @include displayFlex(column, center, center);
+
+            & > span {
+                position: absolute;
+                bottom: 0;
+                right:0;
+                height: 3rem;
+                width: 3rem;
+                border-radius: 50%;
+                background-color: $color-blue-darker;
+                @include displayFlex(column, center, center);
+
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top:50%;
+                    right:50%;
+                    transform: translate3d(50%,0,0);
+                    height: 4px;
+                    width: 4px;
+                    background-color: $color-white;
+                }
+
+                & > svg {
+                    color: $color-white;
+                    font-size: 1.65rem;
+                    position: relative;
+                }
+            }
+
+            &:hover {
+                box-shadow: inset 0 0 5px $color-very-faded-black;
+            }
+
+            & > img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        &__feature > h6 {
+            margin-top:0.8rem;
+            font-size: 1.45rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        &__feature > p {
+            font-size: 0.94rem;
+            opacity: 0.5;
+            margin-top:0.5rem;
+            font-weight: 500;
+            font-size: 1.3rem;
+            text-align: center;
+            line-height: 1.3;
+            height: 2rem;
+        }
+    }
+}

@@ -1,0 +1,136 @@
+@import '../Abstracts/_variables';
+@import '../Abstracts/_mixins';
+
+.scan-page {
+    width: 100%;
+    @include displayFlex(column);
+
+    &__content {
+        flex-grow: 1;
+        padding: 2rem 4rem;
+        padding-right: 7rem;
+        @include displayFlex(column);
+    }
+
+    &__heading {
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 1.4rem;
+
+        & > h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        & > p {
+            font-size: 1.3rem;
+            opacity: 0.75;
+        }
+    }
+
+    &__main {
+        flex-grow: 1;
+        @include displayFlex(row, center, center);
+        padding: 3rem 0 1rem 0;
+
+        & > section {
+            width: 50%;
+            height: 100%;
+            @include displayFlex(column, space-between, center);
+        }
+
+        & > section:first-of-type {
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        & > section:last-of-type {
+            padding: 1rem 0;
+            padding-left: 7.5rem;
+            position: relative;
+        }
+
+        &__progress {
+            padding-bottom:1.5rem;
+            @include displayFlex(column, center, center);
+        }
+
+        &__progress > h1 {
+            font-size: 8.3rem;
+            line-height: 1.2;
+            font-weight: normal;
+            color: $color-btn-blue-dark;
+        }
+
+        &__progress > p {
+            letter-spacing: 0.3px;
+            opacity: 0.6;
+        }
+
+        &__progress__done-icon {
+            font-size: 7rem!important;
+            color: $color-btn-blue;
+        }
+
+        &__progress > h2 {
+            font-size: 2.8rem;
+        }
+
+        &__actions {
+            @include displayFlex(row, center, center);
+        }
+
+        &__actions > figure {
+            height: 5rem;
+            width: 5rem;
+            border-radius: 50%;
+            background-color: $color-btn-blue;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+            margin: 0 1rem;
+            cursor: pointer;
+            @include displayFlex(column, center, center);
+        }
+
+        &__actions > figure > svg {
+            color: $color-white;
+            font-size: 4rem;
+        }
+
+        &__scan-results {
+            width:74%;
+            flex-grow: 1;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            @include displayFlex(column, flex-start, flex-start);
+        }
+
+        &__scan-results > p {
+            font-size: 1.35rem;
+            margin-bottom: 0.4rem;
+        }
+
+        &__scan-cta {
+            width: 100%;
+            margin-top:1rem;
+            @include displayFlex(row, space-between, center);
+        }
+
+        &__scan-cta > a {
+            color: #427ff8;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        &__scan-cta > button {
+            height: 3.5rem;
+            width: 11rem;
+            border-radius: 0.7rem;
+            background-color: #427ff8;
+            color: $color-white;
+            font-weight: bold;
+            font-size: 1.3rem;
+            transition: all .1s;
+        }
+        
+    }
+}

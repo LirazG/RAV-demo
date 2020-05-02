@@ -1,0 +1,18 @@
+//Global folder
+@import './Global/_reset';
+@import './Global/_spinners';
+@import './Global/progress_circle';
+//Components folder
+@import './Components/_navbar';
+@import './Components/_sidebar';
+@import './Components/_banner';
+@import './Components/_threat';
+@import './Components/scan_category';
+// Abstracts folder
+@import './Abstracts/_variables';
+@import './Abstracts/_mixins';
+// Layouts folder
+@import './Layouts/_generic_page';
+@import './Layouts/_status_page';
+@import './Layouts/scan_types_page';
+@import './Layouts/scan_page';
